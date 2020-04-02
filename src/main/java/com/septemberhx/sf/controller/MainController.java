@@ -24,19 +24,19 @@ public class MainController {
 
     @PostMapping(path = "/delivery")
     @ResponseBody
-    @MFuncDescription(value = "delivery", level = 2)
+    @MFuncDescription(value = "delivery", level = 3)
     public MResponse delivery(@RequestBody MResponse params, HttpServletRequest request) {
         boolean r = MBaseUtils.verDepRequest("navigation", 9, request, logger);
 
         if (!r) {
             return MResponse.failResponse();
         }
-        return MBaseUtils.generateResInKBSize(13);
+        return MBaseUtils.generateResInKBSize(2);
     }
 
     @PostMapping(path = "/PDelivery")
     @ResponseBody
-    @MFuncDescription(value = "PDelivery", level = 1)
+    @MFuncDescription(value = "PDelivery", level = 2)
     public MResponse pdelivery(@RequestBody MResponse params, HttpServletRequest request) {
 
         boolean r = MBaseUtils.verDepRequest("navigation", 9, request, logger)
@@ -45,6 +45,6 @@ public class MainController {
         if (!r) {
             return MResponse.failResponse();
         }
-        return MBaseUtils.generateResInKBSize(5);
+        return MBaseUtils.generateResInKBSize(13);
     }
 }
